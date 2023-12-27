@@ -157,6 +157,13 @@ fun KontakCard(
                     text = kontak.email,
                     style = MaterialTheme.typography.titleMedium
                 )
+                Spacer(Modifier.weight(1f))
+                IconButton(onClick = {onDeleteClick(kontak) }) {
+                    Icon(
+                        imageVector = Icons.Default.Delete,
+                        contentDescription = null,
+                    )
+                }
             }
         }
 
