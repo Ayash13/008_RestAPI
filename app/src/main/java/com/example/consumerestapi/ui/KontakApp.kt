@@ -36,7 +36,6 @@ fun KontakApp(
                 .fillMaxSize()
                 .padding(it)
         ) {
-
         }
     }
 }
