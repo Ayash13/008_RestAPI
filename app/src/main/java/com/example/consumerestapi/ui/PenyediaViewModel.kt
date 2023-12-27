@@ -8,6 +8,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.consumerestapi.KontakApplication
 import com.example.consumerestapi.ui.home.viewmodel.HomeViewModel
 import com.example.consumerestapi.data.KontakRepository
+import com.example.consumerestapi.ui.kontak.viewmodel.InsertViewModel
 
 
 object PenyediaViewModel {
@@ -17,7 +18,9 @@ object PenyediaViewModel {
         initializer {
             HomeViewModel(apkikasiKontak().container.kontakRepository)
         }
-
+        initializer {
+            InsertViewModel(apkikasiKontak().container.kontakRepository)
+        }
     }
 }
 
