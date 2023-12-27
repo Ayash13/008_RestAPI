@@ -46,7 +46,14 @@ fun EntryKontakScreen(
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        ) { innerPadding ->
+        topBar = {
+            TopAppBarKontak(
+                title = DestinasiEntry.titleRes,
+                canNavigateBack = true,
+                scrollBehavior = scrollBehavior,
+                navigateUp = navigateBack
+            )
+        }) { innerPadding ->
         EntryKontakBody(
             insertUiState = viewModel.insertKontakState,
             onSiswaValueChange = viewModel::updateInsertKontakState,
