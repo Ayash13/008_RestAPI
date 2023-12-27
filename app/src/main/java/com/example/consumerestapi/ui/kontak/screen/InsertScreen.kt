@@ -44,7 +44,24 @@ fun EntryKontakScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
-
+    Scaffold(
+        modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        ) { innerPadding ->
+        EntryKontakBody(
+            insertUiState = viewModel.insertKontakState,
+            onSiswaValueChange = viewModel::updateInsertKontakState,
+            onSaveClick = {
+                coroutineScope.launch {
+                    viewModel.insertKontak()
+                    navigateBack()
+                }
+            },
+            modifier = Modifier
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState())
+                .fillMaxWidth()
+        )
+    }
 }
 
 @Composable
