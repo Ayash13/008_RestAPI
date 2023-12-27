@@ -45,3 +45,7 @@ fun Kontak.toInsertUiEvent(): InsertUiEvent = InsertUiEvent(
     email = email,
     nohp = nohp,
 )
+
+fun Kontak.toUiStateKontak(): InsertUiState = InsertUiState(
+    insertUiEvent = toInsertUiEvent(),
+)
