@@ -21,7 +21,23 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
 
         ) {
 
-
+        composable(DestinasiHome.route) {
+            HomeScreen(navigateToItemEntry = {
+                navController.navigate(DestinasiEntry.route)
+            },
+                onDetailClick = {})
+        }
+        composable(DestinasiEntry.route) {
+            EntryKontakScreen(navigateBack = {
+                navController.navigate(
+                    DestinasiHome.route
+                ) {
+                    popUpTo(DestinasiHome.route) {
+                        inclusive = true
+                    }
+                }
+            })
+        }
     }
 
 }
