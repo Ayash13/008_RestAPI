@@ -40,6 +40,7 @@ import com.example.consumerestapi.R
 import com.example.consumerestapi.model.Kontak
 import com.example.consumerestapi.navigation.DestinasiNavigasi
 import com.example.consumerestapi.ui.PenyediaViewModel
+import com.example.consumerestapi.ui.TopAppBarKontak
 import com.example.consumerestapi.ui.home.viewmodel.HomeViewModel
 import com.example.consumerestapi.ui.home.viewmodel.KontakUIState
 
@@ -47,6 +48,18 @@ object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
     override val titleRes = "Kontak"
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HomeScreen(
+    navigateToItemEntry: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Int) -> Unit = {},
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
+) {
+
+}
+
 
 @Composable
 fun HomeStatus(
