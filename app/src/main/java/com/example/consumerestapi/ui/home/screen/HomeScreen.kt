@@ -112,6 +112,8 @@ fun KontakLayout(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable { onDetailClick(kontak) },
+                onDeleteClick = {
+                    onDeleteClick(kontak)}
             )
         }
     }
